@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Summer sale landing page</title>
+    <style>
+        :root {
+            font-family: fantasy, serif;
+            font-size: 16px;
+            --flex-var: flex;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .brand-img {
+            height: 40px;
+            width: 50px;
+        }
+
+        #notification-bar {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(300px, 1fr));
+        }
+
+        #notification-bar,
+        .navigation {
+            background-color: rgb(198, 22, 51);
+            color: #fff;
+        }
+
+        .navigation {
+            background-color: rgb(198, 59, 117);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .remove-default {
+            list-style-type: none;
+        }
+
+        .material-icons.md-light {
+            color: rgba(255, 255, 255, 1);
+            line-height: 16px;
+        }
+
+        .time-chips {
+            width: 70px;
+            height: 50px;
+            background-color: #fff;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            letter-spacing: 2px;
+            color: #000;
+        }
+
+        #timer {
+            display: var(--flex-var);
+            gap: 5px;
+            color: #000;
+        }
+
+        .time-chips::after {
+            content: '';
+            width: inherit;
+            height: 25px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: rotate(0);
+            background-color: #00000020;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            /* animation-name: timeChanger; */
+        }
+
+
+        @keyframes timeChanger {
+            0% {
+                height: 20px;
+            }
+
+            25% {
+                height: 10px;
+            }
+
+            50% {
+                height: 0;
+                /* transform: rotate(180deg); */
+
+            }
+
+            75% {
+                height: 15px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                /* transform: rotate(180deg); */
+            }
+
+            95% {
+                height: 25px;
+            }
+
+            100% {
+                /* transform: rotate(0); */
+
+            }
+        }
+
+        #information-section {
+            display: var(--flex-var);
+            justify-content: end;
+            line-height: 32px;
+            align-items: baseline;
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+
+        #information-section>div:first-child {
+            border-right: 1px solid #fff;
+            padding-right: 10px;
+        }
+
+        #information-section>div:nth-child(2) {
+            padding-left: 10px;
+        }
+
+        .icon-holder {
+            display: flex;
+        }
+
+        .mr-10px {
+            margin-right: 10px;
+        }
+
+        #user-part,
+        #menu-part {
+            display: flex;
+            padding-top: 8px;
+        }
+
+        #hamburger-section {
+            display: none;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="desktop.css" media="(min-width:1200px)">
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 600px)">
+</head>
+
+<body class="frame">
+    <div id="notification-bar">
+        <div id="information-section">
+            <div>
+                Shop Biggest Summer Sale upto to 50% off<sup>*</sup>
+            </div>
+            <div>
+                Shop Now
+            </div>
+        </div>
+        <div id="timer">
+            <div class="time-chips">
+                <span id="days-chip">00</span><span>D</span>
+            </div>
+            <div class="time-chips">
+                <span id="hours-chip">00</span><span>Hrs</span>
+            </div>
+            <div class="time-chips">
+                <span id="minutes-chip">00</span><span>Mns</span>
+            </div>
+        </div>
+    </div>
+    <header>
+        <nav class="navigation panel">
+            <img src="brand.jpeg" class="brand-img" alt="brand-image">
+            <menu id="menu-part" class="remove-default">
+                <li class="mr-10px">Summer Sale</li>
+                <li class="mr-10px">Shop</li>
+                <li class="mr-10px">Learn</li>
+            </menu>
+            <menu id="user-part" class="remove-default">
+                <li class='icon-holder mr-10px' id="search-section">
+                    <span class="material-icons md-light">search</span>
+                    <span class="icon-text">Search</span>
+                </li>
+                <li class='icon-holder mr-10px'><span class="material-icons md-light">person</span>
+                    <span class="icon-text">Login</span>
+                </li>
+                <li class='icon-holder mr-10px'><span class="material-icons md-light">shopping_cart</span>
+                    <span class="icon-text">Cart</span>
+                </li>
+                <li id="hamburger-section" class='icon-holder mr-10px'><span class="material-icons md-light">menu</span>
+                </li>
+            </menu>
+        </nav>
+    </header>
+
+    <script>
+        var mediaWatcher = window.matchMedia('(max-width:450px)');
+        mediaWatcher.addEventListener('change', (e) => {
+            console.log('testing for media change')
+        })
+
+        function offerCountDown(startTime) {
+
+            const eventStartTime = startTime - new Date().getTime();
+            const daysChip = document.getElementById('days-chip');
+            const hoursChip = document.getElementById('hours-chip');
+            const minutesChip = document.getElementById('minutes-chip');
+
+            let minutes = Math.floor(eventStartTime / 60000);
+            let hours = 0;
+            let days = 0;
+            if (minutes > 60) {
+                hours = minutes / 60;
+                minutes = Math.floor(minutes % 60);
+                days = Math.floor(hours / 24);
+                hours = Math.floor(hours % 24);
+            } else if (minutes === 60) {
+                minutes = 0;
+                hours = 1;
+            }
+
+            daysChip.textContent = days;
+            minutesChip.textContent = minutes;
+            hoursChip.textContent = hours;
+
+            const timerId = setInterval(() => {
+                if (minutes  === 0 && hours === 0 && days >= 1) {
+                    minutes = 59;
+                    hours = 23;
+                    days = days === 1 ? 0 : days - 1 ;
+                    minutesChip.textContent = minutes;
+                    hoursChip.textContent = hours;
+                    daysChip.textContent = days;
+                } else if (minutes === 0 && hours !== 0) {
+                    minutes = 59;
+                    hours -= 1;
+                    minutesChip.textContent = minutes;
+                    hoursChip.textContent = hours;
+                } else {
+                    --minutes;
+                    minutesChip.textContent = minutes;
+                }
+            }, 1000)
+
+        }
+
+        offerCountDown(1655477941474);
+    </script>
+</body>
+
+</html>
