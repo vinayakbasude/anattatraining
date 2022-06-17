@@ -10,7 +10,7 @@
   justify-content: space-between;
 }
 
-.icon-holder .icon-text{
+.icon-holder .icon-text {
   display: none;
 }
 
@@ -18,19 +18,41 @@
   display: none;
 }
 
-#hamburger-section{
+#hamburger-section {
   display: inline-flex;
 }
 
-#search-section{
+#search-section {
   display: none;
 }
 
 #notification-bar {
   display: grid;
-  grid-template-columns:  repeat(1, minmax(200px, 1fr));
+  grid-template-columns: repeat(1, minmax(200px, 1fr));
 }
 
-#information-section, #timer {
+#information-section,
+#timer {
   justify-content: center;
+}
+
+.hero-section {
+  background-image: url("./LandingPageMobileHero.jpg");
+  background-size: 100% 90%;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.carousel__container {
+  padding-left: 20px;
+}
+
+.carousel__card {
+  height: 180px;
+  min-width: 144px;
+  max-width: 145px;
+}
+
+.carousel__card--img img{
+  width: auto;
 }
