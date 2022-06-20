@@ -1,0 +1,70 @@
+.notification-bar {
+  padding: .5rem;
+}
+.information-section {
+  flex: 50%;
+}
+.navigation.panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.icon-holder .icon-text {
+  display: none;
+}
+
+.menu-part {
+  display: none;
+}
+
+.hamburger-section {
+  display: inline-flex;
+}
+
+.search-section {
+  display: none;
+}
+
+.notification-bar {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(20rem, 1fr));
+}
+
+.information-section,
+.timer {
+  justify-content: center;
+}
+
+.hero-section {
+  background-image: url("../images/LandingPageMobileHero.jpg");
+  background-size: 100% 90%;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.carousel__container {
+  padding-left: 3.2rem;
+}
+
+.carousel__card {
+  height: 18rem;
+  min-width: 14.4rem;
+  max-width: 14.5rem;
+}
+
+.carousel__card--img {  
+  margin-top: 0em;
+}
+.carousel__card--img img{
+  width: auto;
+}
+
+.icon-size-limiter{
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.user-part{
+  justify-content: flex-end;
+}

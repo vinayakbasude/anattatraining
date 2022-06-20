@@ -1,52 +1,52 @@
 @font-face {
     font-family: Gotham;
-    src: url('./fonts/Gotham-Bold.woff2') format('woff2');
+    src: url('../fonts/Gotham-Bold.woff2') format('woff2');
     font-weight: bold;
 }
 
 @font-face {
     font-family: Gotham;
-    src: url('./fonts/Gotham-BoldItalic.woff2') format('woff2');
+    src: url('../fonts/Gotham-BoldItalic.woff2') format('woff2');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: Gotham;
-    src: url('./fonts/Gotham-Light.woff2') format('woff2');
+    src: url('../fonts/Gotham-Light.woff2') format('woff2');
     font-weight: lighter;
 }
 
 @font-face {
     font-family: Gotham;
-    src: url('./fonts/Gotham-LightItalic.woff2') format('woff2');
+    src: url('../fonts/Gotham-LightItalic.woff2') format('woff2');
     font-style: italic;
     font-weight: 100;
 }
 
 @font-face {
     font-family: Gotham;
-    src: url('./fonts/Gotham-Medium.woff2') format('woff2');
+    src: url('../fonts/Gotham-Medium.woff2') format('woff2');
     font-weight: medium;
 }
 
 @font-face {
     font-family: Gotham;
-    src: url('./fonts/Gotham-MediumItalic.woff2') format('woff2');
+    src: url('../fonts/Gotham-MediumItalic.woff2') format('woff2');
     font-style: italic;
     font-weight: 400;
 }
 
 @font-face {
     font-family: Gotham;
-    src: url('./fonts/Gotham-Book.woff2') format('woff2');
+    src: url('../fonts/Gotham-Book.woff2') format('woff2');
     font-style: normal;
     font-weight: 200;
 }
 
 @font-face {
     font-family: Gotham;
-    src: url('./fonts/Gotham-BookItalic.woff2') format('woff2');
+    src: url('../fonts/Gotham-BookItalic.woff2') format('woff2');
     font-style: normal;
     font-weight: 300;
 }

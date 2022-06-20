@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html class="node-start">
 
 <head>
     <title>Summer sale landing page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="desktop.css" media="(min-width:1200px)">
-    <link rel="stylesheet" href="mobile.css" media="(max-width: 600px)">
+    <link rel="preload stylesheet" href="./styles/fonts.css" as="style">
+    <link rel="preload stylesheet" href="./style.css" as="style">
+    <link rel="stylesheet" href="./styles/desktop.css" media="(min-width:1200px)">
+    <link rel="stylesheet" href="./styles/mobile.css" media="(max-width: 600px)">
 </head>
 
 <body class="frame">
-    <div id="notification-bar">
-        <div id="information-section">
+    <div class="notification-bar">
+        <div class="information-section">
             <div>
                 Shop Biggest Summer Sale upto to 50% off<sup>*</sup>
             </div>
@@ -21,7 +21,7 @@
                 Shop Now
             </div>
         </div>
-        <div id="timer">
+        <div class="timer">
             <div class="time-chips">
                 <span id="days-chip">00</span><span>D</span>
             </div>
@@ -35,24 +35,29 @@
     </div>
     <header class="stick-header">
         <nav class="navigation panel">
-            <img src="brand.jpeg" class="brand-img" alt="brand-image">
-            <menu id="menu-part" class="remove-default">
+            <a>
+                <img src="./images/brand.jpeg" class="brand-img" alt="brand-image">
+            </a>
+            <menu class="menu-part remove-default">
                 <li class="mr-10px uppercase">Summer Sale</li>
                 <li class="mr-10px uppercase">Shop</li>
-                <li class="mr-10px uppercase">Learn</li>
+                <li class="uppercase">Learn</li>
             </menu>
-            <menu id="user-part" class="remove-default">
-                <li class='icon-holder mr-10px uppercase' id="search-section">
-                    <span class="material-icons md-light">search</span>
+            <menu class="remove-default user-part">
+                <li class='icon-holder mr-10px uppercase search-section'>
+                    <span class="search-icon icon-size-limiter"></span>
                     <span class="icon-text">Search</span>
                 </li>
-                <li class='icon-holder mr-10px uppercase'><span class="material-icons md-light">person</span>
+                <li class='icon-holder mr-10px uppercase'>
+                    <span class="user-icon icon-size-limiter"></span>
                     <span class="icon-text">Login</span>
                 </li>
-                <li class='icon-holder mr-10px uppercase'><span class="material-icons md-light">shopping_cart</span>
-                    <span class="icon-text">CART</span>
+                <li class='icon-holder mr-10px uppercase'>
+                    <span class="shopping-cart-icon icon-size-limiter"></span>
+                    <span class="icon-text">Cart</span>
                 </li>
-                <li id="hamburger-section" class='icon-holder mr-10px'><span class="material-icons md-light">menu</span>
+                <li class="hamburger-section icon-holder">
+                    <span class="menu-icon icon-size-limiter"></span>
                 </li>
             </menu>
         </nav>
@@ -62,62 +67,58 @@
             <div class="carousel__card">
                 <div class="carousel__card--header">
                     <span>Bundles</span>
-                    <img src="./forward_arrow.png" class="align-arrow">
+                    <span class="arrow-svg"></span>
                 </div>
                 <picture class="carousel__card--img">
-                    <source media="(max-width:600px)" srcset="./Hero_Images_Bundle.jpg">
-                    <img src="Bundle.jpg" alt="product image">
+                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg' >
+                    <img src='./images/Hero_Images_Bundle.jpg' alt="product image">
                 </picture>
             </div>
             <div class="carousel__card">
                 <div class="carousel__card--header">
                     <span>Think</span>
-                    <img src="./forward_arrow.png" class="align-arrow">
+                    <span class="arrow-svg"></span>
                 </div>
                 <picture class="carousel__card--img">
-                    <source media="(max-width:600px)" srcset="./Hero_Images_Bundle.jpg">
-                    <img src="Bundle.jpg" alt="product image">
+                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg'>
+                    <img src='./images/Hero_Images_Bundle.jpg' alt="product image">
                 </picture>
             </div>
             <div class="carousel__card">
                 <div class="carousel__card--header">
                     <span>Defend</span>
-                    <img src="./forward_arrow.png" class="align-arrow">
+                    <span class="arrow-svg"></span>
                 </div>
                 <picture class="carousel__card--img">
-                    <source media="(max-width:600px)" srcset="./Hero_Images_Bundle.jpg">
-                    <img src="Bundle.jpg" class="" alt="product image">
+                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg' >
+                    <img src='./images/Hero_Images_Bundle.jpg' class="" alt="product image">
                 </picture>
             </div>
             <div class="carousel__card">
                 <div class="carousel__card--header">
                     <span>Chill</span>
-                    <img src="./forward_arrow.png" class="align-arrow">
+                    <span class="arrow-svg"></span>
                 </div>
                 <picture class="carousel__card--img">
-                    <source media="(max-width:600px)" srcset="./Hero_Images_Bundle.jpg">
-                    <img src="Bundle.jpg" alt="product image">
+                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg'>
+                    <img src='./images/Hero_Images_Bundle.jpg' alt="product image">
                 </picture>
             </div>
-            <div class="carousel__card">
-                <div  class="carousel__card--header">
+            <div class="carousel__card mr-10px">
+                <div class="carousel__card--header">
                     <span>Bundles</span>
-                    <img src="./forward_arrow.png" class="align-arrow">
+                    <span class="arrow-svg"></span>
                 </div>
                 <picture class="carousel__card--img">
-                    <source media="(max-width:600px)" srcset="./Hero_Images_Bundle.jpg">
-                    <img src="Bundle.jpg" alt="product image">
-                </picture> 
+                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg'>
+                    <img src='./images/Hero_Images_Bundle.jpg' alt="product image">
+                </picture>
             </div>
         </div>
 
     </div>
-    
+
     <script>
-        var mediaWatcher = window.matchMedia('(max-width:450px)');
-        mediaWatcher.addEventListener('change', (e) => {
-            console.log('testing for media change')
-        })
 
         function offerCountDown(startTime) {
 
@@ -138,6 +139,10 @@
             } else if (minutes === 60) {
                 minutes = 0;
                 hours = 1;
+            } else if (minutes < 0) {
+                days = 0;
+                minutes = 0;
+                hours = 0;
             }
 
             daysChip.textContent = days;
@@ -152,7 +157,7 @@
                     minutes = lastMinute;
                     hours = lastHour;
                     days = days === 1 ? 0 : days - 1;
-                    minutesChip.textContent = minutes;
+                    minutesChip.textContent = minutes.toString().padStart(2, '0');
                     hoursChip.textContent = hours;
                     daysChip.textContent = days;
                 } else if (minutes === 0 && hours !== 0) {
@@ -160,7 +165,7 @@
                     hours -= 1;
                     minutesChip.textContent = minutes;
                     hoursChip.textContent = hours;
-                } else if (minutes === 0 && hours === 0 && days === 0) {
+                } else if ((minutes === 0 && hours === 0 && days === 0) || minutes < 0) {
                     clearInterval(timerId)
                 } else {
                     --minutes;
@@ -170,7 +175,7 @@
 
         }
 
-        offerCountDown(1655477941474);
+        offerCountDown(1656660853947);
     </script>
 </body>
 
