@@ -1,19 +1,150 @@
 <!DOCTYPE html>
-<html class="node-start">
+<html>
 
 <head>
     <title>Summer sale landing page</title>
+    <style>
+        :root {
+            font-family: fantasy, serif;
+            font-size: 16px;
+            --flex-var: flex;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .brand-img {
+            height: 2.5rem;
+            width: 3.125rem;
+        }
+
+        #notification-bar {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(300px, 1fr));
+        }
+
+        #notification-bar,
+        .navigation {
+            background-color: rgb(198, 22, 51);
+            color: #fff;
+        }
+
+        .navigation {
+            background-color: rgb(198, 59, 117);
+            padding: .625rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .remove-default {
+            list-style-type: none;
+        }
+
+        .material-icons.md-light {
+            color: rgba(255, 255, 255, 1);
+            line-height: 1rem;
+        }
+
+        .time-chips {
+            width: 4.375rem;
+            height: 3.125rem;
+            background-color: #fff;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            letter-spacing: 2px;
+            color: #000;
+        }
+
+        #timer {
+            display: var(--flex-var);
+            gap: 5px;
+            color: #000;
+        }
+
+        .time-chips::after {
+            content: '';
+            width: inherit;
+            height: 25px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: rotate(0);
+            background-color: #00000020;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            /* animation-name: timeChanger; */
+        }
+
+
+        @keyframes timeChanger {
+            0% {}
+
+            25% {}
+
+            50% {}
+
+            75% {}
+
+            95% {}
+
+            100% {}
+        }
+
+        #information-section {
+            display: var(--flex-var);
+            justify-content: end;
+            line-height: 2rem;
+            align-items: baseline;
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+
+        #information-section>div:first-child {
+            border-right: 1px solid #fff;
+            padding-right: .625rem;
+        }
+
+        #information-section>div:nth-child(2) {
+            padding-left: .625rem;
+        }
+
+        .icon-holder {
+            display: flex;
+        }
+
+        .mr-10px {
+            margin-right: .625rem;
+        }
+
+        #user-part,
+        #menu-part {
+            display: flex;
+            padding-top: .5rem;
+        }
+
+        #hamburger-section {
+            display: none;
+        }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="preload stylesheet" href="./styles/fonts.css" as="style">
-    <link rel="preload stylesheet" href="./style.css" as="style">
-    <link rel="stylesheet" href="./styles/desktop.css" media="(min-width:1200px)">
-    <link rel="stylesheet" href="./styles/mobile.css" media="(max-width: 600px)">
+    <link rel="stylesheet" href="desktop.css" media="(min-width:1200px)">
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 600px)">
 </head>
 
 <body class="frame">
-    <div class="notification-bar">
-        <div class="information-section">
+    <div id="notification-bar">
+        <div id="information-section">
             <div>
                 Shop Biggest Summer Sale upto to 50% off<sup>*</sup>
             </div>
@@ -21,7 +152,7 @@
                 Shop Now
             </div>
         </div>
-        <div class="timer">
+        <div id="timer">
             <div class="time-chips">
                 <span id="days-chip">00</span><span>D</span>
             </div>
@@ -33,92 +164,36 @@
             </div>
         </div>
     </div>
-    <header class="stick-header">
+    <header>
         <nav class="navigation panel">
-            <a>
-                <img src="./images/brand.jpeg" class="brand-img" alt="brand-image">
-            </a>
-            <menu class="menu-part remove-default">
-                <li class="mr-10px uppercase">Summer Sale</li>
-                <li class="mr-10px uppercase">Shop</li>
-                <li class="uppercase">Learn</li>
+            <img src="brand.jpeg" class="brand-img" alt="brand-image">
+            <menu id="menu-part" class="remove-default">
+                <li class="mr-10px">Summer Sale</li>
+                <li class="mr-10px">Shop</li>
+                <li class="mr-10px">Learn</li>
             </menu>
-            <menu class="remove-default user-part">
-                <li class='icon-holder mr-10px uppercase search-section'>
-                    <span class="search-icon icon-size-limiter"></span>
+            <menu id="user-part" class="remove-default">
+                <li class='icon-holder mr-10px' id="search-section">
+                    <span class="material-icons md-light">search</span>
                     <span class="icon-text">Search</span>
                 </li>
-                <li class='icon-holder mr-10px uppercase'>
-                    <span class="user-icon icon-size-limiter"></span>
+                <li class='icon-holder mr-10px'><span class="material-icons md-light">person</span>
                     <span class="icon-text">Login</span>
                 </li>
-                <li class='icon-holder mr-10px uppercase'>
-                    <span class="shopping-cart-icon icon-size-limiter"></span>
+                <li class='icon-holder mr-10px'><span class="material-icons md-light">shopping_cart</span>
                     <span class="icon-text">Cart</span>
                 </li>
-                <li class="hamburger-section icon-holder">
-                    <span class="menu-icon icon-size-limiter"></span>
+                <li id="hamburger-section" class='icon-holder mr-10px'><span class="material-icons md-light">menu</span>
                 </li>
             </menu>
         </nav>
     </header>
-    <div class="hero-section">
-        <div class="carousel__container">
-            <div class="carousel__card">
-                <div class="carousel__card--header">
-                    <span>Bundles</span>
-                    <span class="arrow-svg"></span>
-                </div>
-                <picture class="carousel__card--img">
-                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg' >
-                    <img src='./images/Hero_Images_Bundle.jpg' alt="product image">
-                </picture>
-            </div>
-            <div class="carousel__card">
-                <div class="carousel__card--header">
-                    <span>Think</span>
-                    <span class="arrow-svg"></span>
-                </div>
-                <picture class="carousel__card--img">
-                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg'>
-                    <img src='./images/Hero_Images_Bundle.jpg' alt="product image">
-                </picture>
-            </div>
-            <div class="carousel__card">
-                <div class="carousel__card--header">
-                    <span>Defend</span>
-                    <span class="arrow-svg"></span>
-                </div>
-                <picture class="carousel__card--img">
-                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg' >
-                    <img src='./images/Hero_Images_Bundle.jpg' class="" alt="product image">
-                </picture>
-            </div>
-            <div class="carousel__card">
-                <div class="carousel__card--header">
-                    <span>Chill</span>
-                    <span class="arrow-svg"></span>
-                </div>
-                <picture class="carousel__card--img">
-                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg'>
-                    <img src='./images/Hero_Images_Bundle.jpg' alt="product image">
-                </picture>
-            </div>
-            <div class="carousel__card mr-10px">
-                <div class="carousel__card--header">
-                    <span>Bundles</span>
-                    <span class="arrow-svg"></span>
-                </div>
-                <picture class="carousel__card--img">
-                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg'>
-                    <img src='./images/Hero_Images_Bundle.jpg' alt="product image">
-                </picture>
-            </div>
-        </div>
-
-    </div>
 
     <script>
+        var mediaWatcher = window.matchMedia('(max-width:450px)');
+        mediaWatcher.addEventListener('change', (e) => {
+            console.log('testing for media change')
+        })
 
         function offerCountDown(startTime) {
 
@@ -139,10 +214,6 @@
             } else if (minutes === 60) {
                 minutes = 0;
                 hours = 1;
-            } else if (minutes < 0) {
-                days = 0;
-                minutes = 0;
-                hours = 0;
             }
 
             daysChip.textContent = days;
@@ -157,7 +228,7 @@
                     minutes = lastMinute;
                     hours = lastHour;
                     days = days === 1 ? 0 : days - 1;
-                    minutesChip.textContent = minutes.toString().padStart(2, '0');
+                    minutesChip.textContent = minutes;
                     hoursChip.textContent = hours;
                     daysChip.textContent = days;
                 } else if (minutes === 0 && hours !== 0) {
@@ -165,7 +236,7 @@
                     hours -= 1;
                     minutesChip.textContent = minutes;
                     hoursChip.textContent = hours;
-                } else if ((minutes === 0 && hours === 0 && days === 0) || minutes < 0) {
+                } else if (minutes === 0 && hours === 0 && days === 0) {
                     clearInterval(timerId)
                 } else {
                     --minutes;
@@ -175,7 +246,7 @@
 
         }
 
-        offerCountDown(1656660853947);
+        offerCountDown(1655477941474);
     </script>
 </body>
 
