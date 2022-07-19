@@ -9,6 +9,7 @@
     <link rel="preload stylesheet" href="./style.css" as="style">
     <link rel="stylesheet" href="./styles/desktop.css" media="(min-width:1200px)">
     <link rel="stylesheet" href="./styles/mobile.css" media="(max-width: 600px)">
+    <link rel="stylesheet" href="./styles/new-carousel.css">
 </head>
 
 <body class="frame">
@@ -70,7 +71,7 @@
                     <span class="arrow-svg"></span>
                 </div>
                 <picture class="carousel__card--img">
-                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg' >
+                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg'>
                     <img src='./images/Hero_Images_Bundle.jpg' alt="product image">
                 </picture>
             </div>
@@ -90,7 +91,7 @@
                     <span class="arrow-svg"></span>
                 </div>
                 <picture class="carousel__card--img">
-                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg' >
+                    <source media="(min-width:1000px)" srcset='./images/Bundle.jpg'>
                     <img src='./images/Hero_Images_Bundle.jpg' class="" alt="product image">
                 </picture>
             </div>
@@ -116,66 +117,206 @@
             </div>
         </div>
 
+
+
+    </div>
+    <h2>
+        carousel testing
+    </h2>
+
+    <div class="carousel">
+        <div id="carousel-frame">
+            <h3>1</h3>
+            <img id="img-1" src='./images/Bundle.jpg' alt="product image">
+        </div>
+
     </div>
 
+    <!-- <div class="review-slider">
+        <div class="review-slider__review-details">
+            <div class="review-slider__review-details--aligner">
+                <div class="reviewer-ratings">
+                    Star rating
+                </div>
+                <div class="reviewer-highlights">
+                    “Reishi, lions mane,
+                    chaga and cordyceps mushrooms contain powerful properties”
+                </div>
+                <div class="reviewer-description">
+                    When i wake up, i drink coffee blended with rasberry
+                </div>
+                <div class="reviewer-name">
+                    Vinayak Basude
+                </div>
+                <div class="about-reviewer">
+                    UI Developer
+                </div>
+            </div>
+        </div>
+        <div class="review-slider__reviewer-image">
+            <img style=" width: 541px; height: 100%; object-fit: cover" src='./images/coffee-and-cake.webp'>
+        </div>
+        <div class="review-slider__more-reviewer">
+            <div class="review-slider__more-reviewer--card">
+                <img style="width:100%; height: 100%; object-fit: cover" src='./images/lenses-lattes.webp'>
+            </div>
+            <div class="review-slider__more-reviewer--card">
+                <img style="width:100%; height: 100%; object-fit: cover" src='./images/Bundle.jpg'>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="carousels-container">
+        <div class="reviews-carousel">
+            <div class="reviews-carousel__container">
+                <div class="reviews-carousel__container--cards" id="1">
+                    <img src='./images/lenses-lattes.webp'>
+                </div>
+                <div class="reviews-carousel__container--cards" id="2">
+                    <img src='./images/lenses-lattes-green.webp'>
+                </div>
+                <div class="reviews-carousel__container--cards" id="3">
+                    <img src='./images/lenses-lattes-red.webp'>
+                </div>
+            </div>
+        </div>
+        <div class="reviews-carousel--second-frame">
+            <div class="review-slider__second-frame-reviewer-container">
+                <div class="review-slider__second-frame-reviewer--card" id="2">
+                    <img src='./images/lenses-lattes-green.webp'>
+                </div>
+                <div class="review-slider__second-frame-reviewer--card" id="3">
+                    <img src='./images/lenses-lattes-red.webp'>
+                </div>
+                <div class="review-slider__second-frame-reviewer--card" id="1">
+                    <img src='./images/lenses-lattes.webp'>
+                </div>
+            </div>
+        </div>
+        <div class="reviews-carousel--third-frame">
+            <div class="review-slider__third-frame-reviewer-container">
+                <div class="review-slider__third-frame-reviewer--card" id="3">
+                    <img src='./images/lenses-lattes-red.webp'>
+                </div>
+                <div class="review-slider__third-frame-reviewer--card" id="1">
+                    <img src='./images/lenses-lattes.webp'>
+                </div>
+                <div class="review-slider__third-frame-reviewer--card" id="2">
+                    <img src='./images/lenses-lattes-green.webp'>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="review-slider__reviewer-image--slider-buttons">
+        <button class="review-slider__reviewer-image--slider-buttons--btn-box" id="prev-btn">Previous</button>
+        <button class="review-slider__reviewer-image--slider-buttons--btn-box" id="next-btn">Next</button>
+    </div>
+
+
+
     <script>
+        // var carouselObject = [
+        //     './images/lenses-lattes.webp',
+        //     './images/lenses-lattes-red.webp',
+        //     './images/lenses-lattes-yellow.webp',
+        //     './images/lenses-lattes-green.webp'
+        // ];
+        // var currentIndex = 0;
+        // const containers = document.querySelector('.reviews-carousel__container');
+        // let slides = document.querySelectorAll(".reviews-carousel__container--cards");
+        // let maxSlide = slides.length - 1;
 
-        function offerCountDown(startTime) {
+        // function carouselInitializer(index = 0) {
+        //     // loop through slides and set each slides translateX property to index * 100%
+        //     slides.forEach((slide, indx) => {
+        //         slide.style.transform = `translateX(${indx * 100}%)`;
+        //     });
+        // }
 
-            const eventStartTime = startTime - new Date().getTime();
-            const daysChip = document.getElementById('days-chip');
-            const hoursChip = document.getElementById('hours-chip');
-            const minutesChip = document.getElementById('minutes-chip');
-            const oneMinute = 60000;
-
-            let minutes = Math.floor(eventStartTime / oneMinute);
-            let hours = 0;
-            let days = 0;
-            if (minutes > 60) {
-                hours = minutes / 60;
-                minutes = Math.floor(minutes % 60);
-                days = Math.floor(hours / 24);
-                hours = Math.floor(hours % 24);
-            } else if (minutes === 60) {
-                minutes = 0;
-                hours = 1;
-            } else if (minutes < 0) {
-                days = 0;
-                minutes = 0;
-                hours = 0;
-            }
-
-            daysChip.textContent = days;
-            minutesChip.textContent = minutes;
-            hoursChip.textContent = hours;
-            const lastMinute = 59;
-            const lastHour = 23;
+        // carouselInitializer();
 
 
-            const timerId = setInterval(() => {
-                if (minutes === 0 && hours === 0 && days >= 1) {
-                    minutes = lastMinute;
-                    hours = lastHour;
-                    days = days === 1 ? 0 : days - 1;
-                    minutesChip.textContent = minutes.toString().padStart(2, '0');
-                    hoursChip.textContent = hours;
-                    daysChip.textContent = days;
-                } else if (minutes === 0 && hours !== 0) {
-                    minutes = lastMinute;
-                    hours -= 1;
-                    minutesChip.textContent = minutes;
-                    hoursChip.textContent = hours;
-                } else if ((minutes === 0 && hours === 0 && days === 0) || minutes < 0) {
-                    clearInterval(timerId)
-                } else {
-                    --minutes;
-                    minutesChip.textContent = minutes;
-                }
-            }, 1000)
+        // function loadNextCarouselItem() {
+        //     // currentIndex = currentIndex + 1 >= carouselObject.length ? 0 : currentIndex + 1;
+        //     // createTempPlaceHolder(currentIndex);
+        //     // currentIndex++;
+        //     if (currentIndex === maxSlide) {
+        //         currentIndex = 0;
+        //         const removeFirst = slides[0];
+        //         // containers.removeChild(removeFirst);
+        //         // containers.appendChild(removeFirst);
+        //         // slides = document.querySelectorAll(".reviews-carousel__container--cards");
+        //         // slides.forEach((slide, indx) => {
+        //         //     slide.style.transform = `translateX(${100 * (indx - currentIndex + 1)}%)`;
+        //         // });
 
-        }
+        //     } else {
+        //         currentIndex++;
+        //     }
+        //     slides.forEach((slide, indx) => {
+        //         slide.style.transform = `translateX(${100 * (indx - currentIndex)}%)`;
+        //     });
 
-        offerCountDown(1656660853947);
+        // }
+
+        // function loadPrevCarouselItem() {
+        //     // currentIndex = currentIndex - 1 <= 0 ? carouselObject.length - 1 : currentIndex - 1;
+        //     // carouselInitializer(currentIndex);
+        //     if (currentIndex === 0) {
+        //         currentIndex = maxSlide;
+        //     } else {
+        //         currentIndex--;
+        //     }
+
+
+        //     slides.forEach((slide, indx) => {
+        //         slide.style.transform = `translateX(${100 * (indx - currentIndex)}%)`;
+        //     });
+        // }
+
+        // function createTempPlaceHolder(index) {
+        //     // const temporaryElement = document.createElement('img');
+        //     // temporaryElement.src = carouselObject[index];
+        //     // temporaryElement.classList.add('active-image');
+        //     // const parentElement = document.querySelector('.reviews-carousel__container--cards');
+        //     // for (let child of parentElement.childNodes) {
+        //     //     console.log('tagName', child.tagName, child.nodeName)
+        //     //     if (child.nodeName === 'IMG') {
+        //     //         child.classList.remove('active-image');
+        //     //         child.classList.add('previous-element');
+        //     //         break;
+        //     //     }
+
+        //     // }
+        //     // parentElement.appendChild(temporaryElement);
+        // }
+
+    </script>
+    <!-- <script src="./javascript/carousel.js"></script> -->
+    <script src="./javascript/carousel-plugin.js"></script>
+    <script>
+        const myCarousel = new Carousel({
+            id: ".reviews-carousel__container",
+            slides: ".reviews-carousel__container--cards",
+            cloneName: 'first-frame',
+        }, {
+            id: ".review-slider__second-frame-reviewer-container",
+            slides: ".review-slider__second-frame-reviewer--card",
+            cloneName: 'second-frame',
+        }, {
+            id: ".review-slider__third-frame-reviewer-container",
+            slides: ".review-slider__third-frame-reviewer--card",
+            cloneName: 'third-frame'
+        });
+        myCarousel.initialize();
+        console.log(myCarousel);
+        const nextBtn = document.getElementById("next-btn");
+        const prevBtn = document.getElementById("prev-btn");
+        nextBtn.addEventListener("click", myCarousel.loadNextSlide);
+        prevBtn.addEventListener("click", myCarousel.loadPreviousSlide);
     </script>
 </body>
 
